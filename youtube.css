@@ -30,6 +30,7 @@
     */
     --comment-width: auto; /* go 100% for a full screen lower third style*/
     --comment-padding: 20px 40px 20px 70px;
+    --comment-padding-no-badges: 20px;
     --comment-area-height: 30vh;
     --comment-scale: 1;
     --comment-area-size-offset: 0;
@@ -46,10 +47,13 @@
 body {
     background-color: var(--keyer-bg-color);
 }
+
+#wc-container-left, #wc-container-right, div.main, /* zoom */
 yt-live-chat-app {
     margin-bottom: var(--comment-area-height);
     height: calc(100vh - var(--comment-area-height)) !important;
 }
+
 .btn-clear {
     position: absolute;
     z-index: 99999;
@@ -89,6 +93,7 @@ yt-live-chat-text-message-renderer.shown-comment {
 .shown-comment:hover {
     opacity: 0.5;
 }
+
 highlight-chat {
     font-family: var(--font-family);
     font-weight: var(--highlight-chat-font-weight);
@@ -146,6 +151,12 @@ highlight-chat.preview {
     border-radius: var(--comment-border-radius);
     font-size: var(--comment-font-size);
 }
+
+/* No images, donations, etc. */
+.hl-message.no-badges {
+    padding: var(--comment-padding-no-badges);
+}
+
 .hl-message img {
     width: 50px;
     vertical-align: middle;

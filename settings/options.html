@@ -21,8 +21,8 @@
       border-radius: 4px;
       width: 90%;
     }
-    input.checkbox {
-      float: left;
+    input.radio {
+      line-height: 120%;
     }
     button {
       padding: 6px;
@@ -47,68 +47,85 @@
   <form>
     <div class="section">
       <div class="setting">
-        <label>Highlight Words</label>
+        <label for="highlight-words">Highlight Words</label>
         <div>Enter a list of comma-separated words that will be highlighted in the chat</div>
         <input type="text" class="text" id="highlight-words">
       </div>
     </div>
     <div class="section">
       <div class="setting">
-        <label>Background Color</label>
+        <label for="color">Background Color</label>
         <input type="text" class="text" id="color">
       </div>
     </div>
     <div class="section">
       <div class="setting">
-        <label>Author Name Color</label>
+        <label for="author-color">Author Name Color</label>
         <input type="text" class="text" id="author-color">
       </div>
       <div class="setting">
-        <label>Author Background Color</label>
+        <label for="author-bg-color">Author Background Color</label>
         <input type="text" class="text" id="author-bg-color">
       </div>
       <div class="setting">
-        <label>Author Avatar Border Color</label>
+        <label for="author-avatar-border-color">Author Avatar Border Color</label>
         <input type="text" class="text" id="author-avatar-border-color">
       </div>
     </div>
     <div class="section">
       <div class="setting">
-        <label>Chat Message Background Color</label>
+        <label for="comment-bg-color">Chat Message Background Color</label>
         <input type="text" class="text" id="comment-bg-color">
       </div>
       <div class="setting">
-        <label>Chat Message Text Color</label>
+        <label for="comment-color">Chat Message Text Color</label>
         <input type="text" class="text" id="comment-color">
       </div>
     </div>
     <div class="section">
       <div class="setting" style="margin-bottom: 10px;">
-        <input type="checkbox" class="checkbox" id="firstname">
-        <label>Show only first name</label>
+        <div>Author Name</div>
+        <!-- The id and the value should be identical to simplify the settings code. -->
+
+        <label for="full-name">
+          <input type="radio" class="radio" name="display-name" value="full-name" id="full-name">
+          Show Author Full Name
+        </label>
+        <label for="first-name">
+          <input type="radio" class="radio" name="display-name" value="first-name" id="first-name">
+          Show only first name
+        </label>
+        <label for="hidden-name">
+          <input type="radio" class="radio" name="display-name" value="hidden-name" id="hidden-name">
+          Hide Author Name
+        </label>
       </div>
       <div class="setting">
-        <label>Font</label>
+        <label for="font-family">Font</label>
         <input type="text" class="text" id="font-family">
       </div>
     </div>
     <div class="section">
       <p><i>Adjust these to make the comment text smaller or fit more lines of text. Sorry it's kind of hard to use.</i></p>
       <div class="setting">
-        <label>Active Comment Scale (e.g. 0.8)</label>
+        <label for="scale">Active Comment Scale (e.g. 0.8)</label>
         <input type="text" class="text" id="scale">
       </div>
       <div class="setting">
-        <label>Active Comment Bottom Position</label>
+        <label for="comment-bottom">Active Comment Bottom Position</label>
         <div>(set negative to move lower when scaled down, e.g. -2vh)</div>
         <input type="text" class="text" id="comment-bottom">
       </div>
       <div class="setting">
-        <label>Active Comment Height (default 30vh)</label>
+        <label for="border-radius">Comment Border Radius in pixels (default 4)</label>
+        <input type="number" class="text" id="border-radius">
+      </div>
+      <div class="setting">
+        <label for="comment-height">Active Comment Height (default 30vh)</label>
         <input type="text" class="text" id="comment-height">
       </div>
       <div class="setting">
-        <label>Width Offset</label>
+        <label for="size-offset">Width Offset</label>
         <div>(make text area wider when scaled down, e.g. 100)</div>
         <input type="text" class="text" id="size-offset">
       </div>
